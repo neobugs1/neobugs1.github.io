@@ -1,7 +1,136 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <!DOCTYPE html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Google Fots -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Remixicon Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <!-- Remixicon Icon -->
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <!-- Main CSS -->
+    <link href="assets/css/main.css" rel="stylesheet" />
+    <title>Никола Смилески</title>
+  </head>
+  <body>
+    <!-- header -->
+    <header class="ds-header">
+      <div class="container">
+        <div class="ds-logo">
+          <a href="index.html">Никола Смилески</a>
+          <span>Software Engineer | Софтверски Инженер</span>
+        </div>
+      </div>
+      <a href="about.html" class="ds-about-link-button"><i class="ri-user-3-line"></i> <span>About me</span></a>
+    </header>
+    <!-- header -->
+    <div class="ds-slider-section">
+      <div class="ds-slider">
+        <div class="ds-slider-loop">
+          <img src="assets/images/slider-1.png" />
+          <span
+            ><a href="project.html">Ex squeeze me <i class="ri-external-link-line"></i></a
+          ></span>
+        </div>
+        <div class="ds-slider-loop">
+          <img src="assets/images/slider-2.png" />
+          <span
+            ><a href="project.html">Ex squeeze me <i class="ri-external-link-line"></i></a
+          ></span>
+        </div>
+        <div class="ds-slider-loop">
+          <img src="assets/images/slider-3.png" />
+          <span
+            ><a href="project.html">Ex squeeze me <i class="ri-external-link-line"></i></a
+          ></span>
+        </div>
+        <div class="ds-slider-loop">
+          <img src="assets/images/slider-4.png" />
+          <span
+            ><a href="project.html">Ex squeeze me <i class="ri-external-link-line"></i></a
+          ></span>
+        </div>
+        <div class="ds-slider-loop">
+          <img src="assets/images/slider-1.png" />
+          <span
+            ><a href="project.html">Ex squeeze me <i class="ri-external-link-line"></i></a
+          ></span>
+        </div>
+        <div class="ds-slider-loop">
+          <img src="assets/images/slider-2.png" />
+          <span
+            ><a href="project.html">Ex squeeze me <i class="ri-external-link-line"></i></a
+          ></span>
+        </div>
+        <div class="ds-slider-loop">
+          <img src="assets/images/slider-4.png" />
+          <span
+            ><a href="project.html">Ex squeeze me <i class="ri-external-link-line"></i></a
+          ></span>
+        </div>
+      </div>
+    </div>
+    <div id="experience" class="background-alt">
+      <h2 class="heading">Experience</h2>
+      <div id="experience-timeline">
+        <div data-date="September 2015 – September 2016">
+          <h3>Employer Name</h3>
+          <h4>Job Title</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo
+            malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
+          </p>
+        </div>
+
+        <div data-date="September 2015 – September 2016">
+          <h3>Employer Name</h3>
+          <h4>Job Title</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo
+            malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
+          </p>
+        </div>
+
+        <div data-date="September 2015 – September 2016">
+          <h3>Employer Name</h3>
+          <h4>Job Title</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo
+            malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- End #experience -->
+    <!-- footer -->
+    <footer class="ds-footer">
+      <div class="container"></div>
+    </footer>
+    <!-- footer -->
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
 </template>
 
 <style>
