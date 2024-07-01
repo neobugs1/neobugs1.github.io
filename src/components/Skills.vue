@@ -1,11 +1,53 @@
 <template>
-  <section class="flex flex-col items-center justify-center bg-white dark:bg-gray-800 dark:text-white">
-    <h2 class="text-2xl font-bold mb-4">Skills</h2>
-    <ul class="list-disc">
-      <li class="mb-2">JavaScript</li>
-      <li class="mb-2">Vue.js</li>
-      <li class="mb-2">Tailwind CSS</li>
-      <li class="mb-2">Node.js</li>
-    </ul>
-  </section>
+  <div class="bg-white dark:bg-gray-800 dark:text-white">
+    <div class="p-8 w-2/4 mx-auto">
+      <h2 class="text-2xl font-bold text-center mb-4">My Skills</h2>
+      <div class="h-1 bg-green-500 w-20 mx-auto mb-6"></div>
+
+      <div class="space-y-8">
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Programming Languages</h3>
+          <div class="grid grid-cols-3 md:grid-cols-6 gap-4">
+            <SkillCard name="C#" icon="simple-icons:csharp" />
+            <SkillCard name="Java" icon="ri:java-fill" />
+            <SkillCard name="JavaScript" icon="ri:javascript-fill" />
+            <SkillCard name="Python" icon="simple-icons:python" />
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Front-End</h3>
+          <div class="grid grid-cols-3 md:grid-cols-6 gap-4">
+            <SkillCard name="Bootstrap" icon="ri:bootstrap-fill" />
+            <SkillCard name="CSS" icon="akar-icons:css-fill" />
+            <SkillCard name="HTML" icon="akar-icons:html-fill" />
+            <SkillCard name="React" icon="akar-icons:react-fill" />
+            <SkillCard name="Tailwind CSS" icon="ri:tailwind-css-fill" />
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-semibold mb-2">Back-End and Databases</h3>
+          <div class="grid grid-cols-3 md:grid-cols-6 gap-4">
+            <SkillCard name="Django" icon="simple-icons:django" />
+            <SkillCard name="MongoDB" icon="simple-icons:mongodb" />
+            <SkillCard name="MySQL" icon="simple-icons:mysql" />
+            <SkillCard name="PostgreSQL" icon="akar-icons:postgresql-fill" />
+            <SkillCard name="Spring" icon="simple-icons:spring" />
+            <SkillCard name="SQLite" icon="simple-icons:sqlite" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
+
+<script>
+import SkillCard from "./SkillCard.vue";
+
+export default {
+  components: {
+    SkillCard,
+  },
+};
+</script>

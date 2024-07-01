@@ -1,7 +1,7 @@
 <template>
-  <header class="flex justify-between items-center p-4 bg-gray-200 dark:bg-gray-800 dark:text-white">
+  <header class="flex justify-between items-center p-4 bg-gray-800 dark:bg-gray-950 text-white">
     <LanguagePicker />
-    <h1 class="text-xl font-bold">Никола Смилески</h1>
+    <h1 class="text-xl font-bold">Your Name</h1>
     <DarkModeToggle />
   </header>
 </template>

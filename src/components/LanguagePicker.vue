@@ -1,8 +1,23 @@
 <template>
-  <select @change="changeLanguage($event)" class="px-2 py-1 border rounded">
-    <option value="en">English</option>
-    <option value="mk">Macedonian</option>
-  </select>
+  <div class="flex justify-center items-center">
+    <a
+      :class="{ 'text-gray-500 cursor-not-allowed': locale === 'en' }"
+      @click="changeLanguage('en')"
+      :disabled="locale === 'en'"
+      href="#"
+      class="px-2 py-1 hover:text-gray-600 transition duration-200 ease-in-out"
+      >EN</a
+    >
+    <span class="mx-2 text-lg font-bold">|</span>
+    <a
+      :class="{ 'text-gray-500 cursor-not-allowed': locale === 'mk' }"
+      @click="changeLanguage('mk')"
+      :disabled="locale === 'mk'"
+      href="#"
+      class="px-2 py-1 hover:text-gray-600 transition duration-200 ease-in-out"
+      >MK</a
+    >
+  </div>
 </template>
 
 <script>
@@ -11,10 +26,10 @@ import { useI18n } from "vue-i18n";
 export default {
   setup() {
     const { locale } = useI18n();
-    const changeLanguage = (event) => {
-      locale.value = event.target.value;
+    const changeLanguage = (lang) => {
+      locale.value = lang;
     };
-    return { changeLanguage };
+    return { locale, changeLanguage };
   },
 };
 </script>
