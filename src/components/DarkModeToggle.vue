@@ -1,9 +1,15 @@
 <template>
-  <button @click="toggleTheme" class="px-4 py-2 bg-gray-200 dark:bg-gray-800 dark:text-white">{{ theme }} Mode</button>
+  <button class="theme-toggle rounded bg-gray-700 dark:bg-gray-800 p-2 mr-4 hover:bg-gray-600 dark:hover:bg-gray-700" @click="toggleTheme">
+    <div class="sun-moon">
+      <span class="sun" v-if="theme === 'Light'"><Icon icon="bi:sun-fill" style="color: #5bc733" /></span>
+      <span class="moon" v-else><Icon icon="bi:moon-fill" style="color: #5bc733" /></span>
+    </div>
+  </button>
 </template>
 
 <script>
 import { ref } from "vue";
+import { Icon } from "@iconify/vue";
 
 export default {
   setup() {
@@ -13,6 +19,9 @@ export default {
       theme.value = theme.value === "Light" ? "Dark" : "Light";
     };
     return { theme, toggleTheme };
+  },
+  components: {
+    Icon,
   },
 };
 </script>
