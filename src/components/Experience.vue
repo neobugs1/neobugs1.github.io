@@ -19,7 +19,7 @@
           <p class="text-sm">{{ job.company }}</p>
           <p class="text-sm">{{ job.duration }}</p>
           <p class="mt-2">{{ job.description }}</p>
-          <ul class="list-disc mt-2 ml-4">
+          <ul class="list-disc mt-2 ml-8">
             <li v-for="point in job.points" :key="point">{{ point }}</li>
           </ul>
         </div>

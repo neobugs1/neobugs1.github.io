@@ -1,5 +1,6 @@
 <template>
   <div>
+    <AboutMe />
     <Skills />
     <Experience />
     <Projects />
@@ -7,11 +8,12 @@
 </template>
 
 <script>
+import AboutMe from "../components/AboutMe.vue";
 import Skills from "../components/Skills.vue";
 import Experience from "../components/Experience.vue";
 import Projects from "../components/Projects.vue";
 
 export default {
-  components: { Skills, Experience, Projects },
+  components: { AboutMe, Skills, Experience, Projects },
 };
 </script>

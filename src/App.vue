@@ -2,7 +2,6 @@
 import { RouterLink, RouterView } from "vue-router";
 import LanguagePicker from "./components/LanguagePicker.vue";
 import DarkModeToggle from "./components/DarkModeToggle.vue";
-import HelloWorld from "./components/HelloWorld.vue";
 import HeaderComp from "./components/HeaderComp.vue";
 </script>
 
