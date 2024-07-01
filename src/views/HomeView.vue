@@ -1,9 +1,9 @@
 <template>
   <div>
     <AboutMe />
-    <Skills />
-    <Experience />
     <Projects />
+    <Experience />
+    <Skills />
   </div>
 </template>
 

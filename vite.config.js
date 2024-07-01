@@ -7,7 +7,7 @@ import vueDevTools from "vite-plugin-vue-devtools";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/resume/",
+  base: "/neobugs1.github.io/",
   plugins: [vue(), vueJsx(), vueDevTools()],
   resolve: {
     alias: {
