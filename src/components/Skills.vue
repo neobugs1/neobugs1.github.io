@@ -1,8 +1,8 @@
 <template>
   <div class="bg-white dark:bg-gray-800 dark:text-white">
     <div class="p-8 w-2/4 mx-auto">
-      <h2 class="text-2xl font-bold text-center mb-4">My Skills</h2>
-      <div class="h-1 bg-green-500 w-20 mx-auto mb-6"></div>
+      <h2 class="text-2xl font-bold text-center mb-1">My Skills</h2>
+      <div class="h-0.5 bg-green-500 w-20 mx-auto mb-6" />
 
       <div class="space-y-8">
         <div>
