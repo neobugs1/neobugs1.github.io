@@ -20,7 +20,18 @@
             <Icon icon="line-md:close" height="14" color="lightgray" />
           </button>
         </div>
-        <div class="markdown-body dark:markdown-body-light p-12 border border-gray-700 rounded-lg overflow-y-auto custom-scrollbar">
+        <div
+          :class="[
+            'markdown-body',
+            isDarkMode ? 'markdown-body-dark' : 'markdown-body-light',
+            'p-12',
+            'border',
+            'border-gray-300 dark:border-gray-700',
+            'rounded-lg',
+            'overflow-y-auto',
+            'custom-scrollbar',
+          ]"
+        >
           <div v-if="readmeContent" v-html="readmeContent"></div>
           <div v-else class="text-gray-400">Loading...</div>
         </div>
@@ -32,8 +43,7 @@
 <script>
 import axios from "axios";
 import { marked } from "marked";
-import "github-markdown-css/github-markdown-light.css";
-import "github-markdown-css/github-markdown-dark.css";
+import "github-markdown-css/github-markdown.css";
 import { Icon } from "@iconify/vue";
 
 export default {
@@ -57,10 +67,7 @@ export default {
       return this.repoUrl.split("/").slice(-2).join("/");
     },
     isDarkMode() {
-      return document.documentElement.classList.contains("dark");
-    },
-    markdownClass() {
-      return ["markdown-body", this.isDarkMode ? "dark" : "light"];
+      return window.themeMode == "dark";
     },
   },
   mounted() {
@@ -113,7 +120,7 @@ export default {
 
 .custom-scrollbar {
   overflow-y: auto;
-  height: calc(100% - 60px); /* Adjust the height to fit within the modal, leaving space for the header */
+  height: calc(100% - 60px);
 }
 
 .custom-scrollbar::-webkit-scrollbar {
@@ -132,7 +139,7 @@ export default {
 
 .markdown-body-light {
   color: #24292e;
-  background-color: #ffffff;
+  background-color: #f7f7f7;
   --color-prettylights-syntax-comment: #6e7781;
   --color-prettylights-syntax-constant: #0550ae;
   --color-prettylights-syntax-entity: #8250df;

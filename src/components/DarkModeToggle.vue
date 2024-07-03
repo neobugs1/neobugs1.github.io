@@ -14,9 +14,11 @@ import { Icon } from "@iconify/vue";
 export default {
   setup() {
     const theme = ref("Light");
+    window.themeMode = "light";
     const toggleTheme = () => {
       document.body.classList.toggle("dark");
       theme.value = theme.value === "Light" ? "Dark" : "Light";
+      window.themeMode = window.themeMode === "light" ? "dark" : "light";
     };
     return { theme, toggleTheme };
   },
