@@ -9,7 +9,7 @@
       <h1>{{ name }}</h1>
       <h2>{{ title }}</h2>
       <div class="flex justify-center mt-4 space-x-4">
-        <a href="mailto:nikola.smileski@gmail.com" target="_blank">
+        <a href="mailto:nikola.smileski23@gmail.com" target="_blank">
           <div class="p-4 bg-transparent border shadow-lg rounded hover:bg-gray-800">
             <Icon icon="mdi:email" class="text-white text-2xl" />
           </div>
