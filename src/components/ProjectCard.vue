@@ -1,7 +1,7 @@
 <template>
   <div
     @click="viewDetails"
-    class="block bg-gray-100 dark:bg-gray-900 rounded-lg overflow-hidden transform hover:scale-105 border border-gray-200 dark:border-gray-600 transition-transform duration-300 p-2 cursor-pointer"
+    class="block rounded-lg overflow-hidden transform hover:scale-105 border border-gray-200 dark:border-gray-600 transition-transform p-2 cursor-pointer bg-gray-100 dark:bg-gray-900"
   >
     <div class="p-4">
       <div class="flex mb-4 space-x-2">

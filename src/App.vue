@@ -1,19 +1,27 @@
 <script setup>
-import { RouterLink, RouterView } from "vue-router";
-import LanguagePicker from "./components/LanguagePicker.vue";
-import DarkModeToggle from "./components/DarkModeToggle.vue";
 import HeaderComp from "./components/HeaderComp.vue";
+import HomeView from "./views/HomeView.vue";
 </script>
 
 <template>
   <HeaderComp />
-  <RouterView />
+  <div class="content">
+    <HomeView />
+  </div>
 </template>
 
 <style scoped>
+.content {
+  margin-top: var(--header-height);
+}
+
 header {
   line-height: 1.5;
   max-height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .logo {

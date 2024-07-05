@@ -1,6 +1,6 @@
 <template>
   <section class="flex flex-row gap-48 justify-center bg-gray-100 dark:bg-gray-900 dark:text-white overflow-hidden p-8">
-    <h2 class="text-4xl h-12 font-semibold mb-4 border-b-2 border-green-500">Experience</h2>
+    <h2 class="text-4xl h-12 font-semibold mb-4 border-b-2 border-green-500 text-black dark:text-white">Experience</h2>
     <div class="relative w-full max-w-2xl">
       <!-- Connecting line -->
       <div class="absolute top-32 transform -translate-x-1/2 h-full w-1 bg-green-500"></div>
@@ -15,12 +15,12 @@
         ></div>
         <!-- Job details -->
         <div class="ml-10 p-4 border rounded shadow-lg bg-white dark:bg-gray-900 hover:shadow-xl">
-          <h3 class="text-lg font-semibold">{{ job.title }}</h3>
-          <p class="text-sm">{{ job.company }}</p>
-          <p class="text-sm">{{ job.duration }}</p>
-          <p class="mt-2">{{ job.description }}</p>
+          <h3 class="text-lg font-semibold text-black dark:text-white">{{ job.title }}</h3>
+          <p class="text-sm text-black dark:text-white">{{ job.company }}</p>
+          <p class="text-sm text-black dark:text-white">{{ job.duration }}</p>
+          <p class="mt-2 text-black dark:text-white">{{ job.description }}</p>
           <ul class="list-disc mt-2 ml-8">
-            <li v-for="point in job.points" :key="point">{{ point }}</li>
+            <li v-for="point in job.points" class="text-black dark:text-white" :key="point">{{ point }}</li>
           </ul>
         </div>
       </div>
