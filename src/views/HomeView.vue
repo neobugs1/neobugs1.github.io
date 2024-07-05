@@ -7,6 +7,7 @@
     <Skills />
     <RecentActivity />
     <ContactMe />
+    <FooterComp />
     <button
       v-if="showScrollToTop"
       @click="scrollToTop"
@@ -25,12 +26,13 @@ import Projects from "../components/Projects.vue";
 import RecentActivity from "../components/RecentActivity.vue";
 import Particles from "../components/Particles.vue";
 import ContactMe from "../components/ContactMe.vue";
+import FooterComp from "../components/FooterComp.vue";
 
 import { ref, onMounted, onUnmounted } from "vue";
 import { Icon } from "@iconify/vue";
 
 export default {
-  components: { AboutMe, Skills, Experience, Projects, RecentActivity, Particles, ContactMe, Icon },
+  components: { AboutMe, Skills, Experience, Projects, RecentActivity, Particles, ContactMe, FooterComp, Icon },
   setup() {
     const showScrollToTop = ref(false);
 
