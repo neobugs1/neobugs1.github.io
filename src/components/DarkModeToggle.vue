@@ -18,7 +18,7 @@ export default {
     const toggleTheme = () => {
       document.body.classList.toggle("dark");
       theme.value = theme.value === "Light" ? "Dark" : "Light";
-      window.themeMode = window.themeMode === "light" ? "dark" : "light";
+      window.themeMode = theme.value.toLowerCase();
     };
     return { theme, toggleTheme };
   },

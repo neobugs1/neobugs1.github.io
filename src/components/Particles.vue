@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex items-center justify-center min-h-screen bg-gradient-to-r from-green-400 to-green-600 dark:bg-gradient-to-r dark:from-gray-700 dark:to-gray-900"
+    class="relative flex items-center justify-center min-h-screen bg-gradient-to-r from-green-400 to-green-600 dark:bg-gradient-to-r dark:from-gray-700 dark:to-gray-900"
   >
     <div id="particles-js"></div>
     <div
@@ -31,11 +31,15 @@
         </a>
       </div>
     </div>
+    <button @click="scrollToAbout" class="absolute bottom-5 p-4 bg-transparent border shadow-lg rounded-full hover:bg-gray-800 z-50">
+      <Icon icon="mdi:chevron-down" class="text-white text-2xl" />
+    </button>
   </div>
 </template>
 
 <script>
 import { Icon } from "@iconify/vue";
+
 export default {
   data() {
     return {
@@ -49,6 +53,19 @@ export default {
   computed: {
     isDarkMode() {
       return window.themeMode === "dark";
+    },
+  },
+  methods: {
+    scrollToAbout() {
+      const aboutSection = document.getElementById("about");
+      const headerHeight = document.querySelector("header") ? document.querySelector("header").offsetHeight : 0;
+      if (aboutSection) {
+        const topPosition = aboutSection.getBoundingClientRect().top + window.scrollY - headerHeight;
+        window.scrollTo({
+          top: topPosition,
+          behavior: "smooth",
+        });
+      }
     },
   },
   components: {
