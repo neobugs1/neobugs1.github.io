@@ -15,4 +15,16 @@
   h2 {
     @apply font-sans font-bold !important;
   }
+  .ghCalendarDayCell {
+    @apply bg-gray-300 dark:bg-gray-800;
+  }
+  .ghCalendarCard {
+    @apply border rounded-2xl border-gray-300 dark:border-gray-700;
+  }
+  #gh {
+    @apply text-black dark:text-white;
+  }
+  .ghCalendarTable {
+    @apply text-black dark:text-white;
+  }
 }

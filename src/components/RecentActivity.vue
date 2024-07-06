@@ -3,7 +3,7 @@
     class="flex flex-row gap-48 justify-center bg-gray-100 dark:bg-gray-900 dark:text-white overflow-hidden p-8 shadow-[inset_0_11px_8px_-10px_rgba(0,0,0,0.1),inset_0_-11px_8px_-10px_rgba(0,0,0,0.1)]"
   >
     <h2 class="text-4xl h-12 font-semibold mb-4 border-b-2 border-green-500 text-black dark:text-white">Recent Activity</h2>
-    <div id="gh" data-login="neobugs1"></div>
+    <div id="gh" class="" data-login="neobugs1"></div>
   </section>
 </template>
 
@@ -189,13 +189,11 @@ async function main() {
 
 <style>
 :root {
-  --gh-bg-color: #0d1117;
   --gh-base-size-4: 0.25rem;
   --gh-base-size-8: 0.5rem;
   --gh-base-size-12: 0.75rem;
   --gh-base-size-16: 1rem;
   --gh-base-size-32: 2rem;
-  --gh-cell-level0-color: #21262d;
   --gh-cell-level1-color: #0e4429;
   --gh-cell-level2-color: #006d32;
   --gh-cell-level3-color: #26a641;
@@ -213,7 +211,6 @@ async function main() {
 
 /* Main block */
 #gh {
-  color: var(--gh-text-default-color);
   width: fit-content;
   font-family: var(--gh-font-default-family);
 }
@@ -227,7 +224,6 @@ async function main() {
 
 /* Table */
 .ghCalendarTable {
-  color: var(--gh-text-default-color);
   border-spacing: 3px;
   border-collapse: separate;
 }
@@ -247,7 +243,6 @@ async function main() {
   outline-offset: -2px;
 }
 .ghCalendarDayCell[data-level="NONE"] {
-  background-color: var(--gh-cell-level0-color);
   border: none;
   outline: none;
 }
@@ -302,9 +297,6 @@ async function main() {
   padding: var(--gh-base-size-16);
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
-  border: var(--gh-border-card-width, 1px) solid var(--gh-border-card-color);
 }
 .ghCalendarCanvas {
   display: flex !important;
