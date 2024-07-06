@@ -4,7 +4,7 @@
       <h2 class="text-2xl font-bold text-center mb-1 text-gray-900 dark:text-white">Projects</h2>
       <div class="h-0.5 bg-green-500 w-16 mx-auto mb-6" />
 
-      <p class="text-center text-gray-800 dark:text-gray-400 mb-8">
+      <p class="text-center text-sm text-gray-800 dark:text-gray-400 mb-4">
         This page lists some of my personal and work projects. Every project has some story, click on the title to read.
       </p>
       <div class="flex justify-center mb-4">
@@ -13,14 +13,14 @@
           :key="filter"
           @click="setActiveFilter(filter)"
           :class="[
-            'px-4 py-2 mr-2 rounded-full',
+            'px-4 py-2 mr-2 rounded-full text-sm',
             activeFilter === filter ? 'bg-green-500 text-white' : 'bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300',
           ]"
         >
           {{ filter }}
         </button>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
         <ProjectCard
           v-for="project in filteredProjects"
           :key="project.id"

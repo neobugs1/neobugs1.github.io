@@ -22,7 +22,7 @@
           <p class="text-sm text-black dark:text-white">{{ job.duration }}</p>
           <p class="mt-2 text-black dark:text-white">{{ job.description }}</p>
           <ul class="list-disc mt-2 ml-8">
-            <li v-for="point in job.points" class="text-black dark:text-white" :key="point">{{ point }}</li>
+            <li v-for="point in job.points" class="text-black dark:text-white text-sm" :key="point">{{ point }}</li>
           </ul>
         </div>
       </div>

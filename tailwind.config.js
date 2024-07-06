@@ -19,6 +19,11 @@ export default {
         "pulse-ring": "pulse-ring 1.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite",
         "pulse-dot": "pulse-dot 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite",
       },
+      fontFamily: {
+        sans: ["Open Sans", "sans-serif"],
+        serif: ["Lora", "serif"],
+        inter: ["Inter", "sans-serif"],
+      },
     },
   },
   plugins: [],

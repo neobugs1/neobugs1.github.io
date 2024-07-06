@@ -1,7 +1,7 @@
 <template>
   <div
     @click="viewDetails"
-    class="block rounded-lg overflow-hidden transform hover:scale-105 border border-gray-200 dark:border-gray-600 transition-transform p-2 cursor-pointer bg-gray-100 dark:bg-gray-900"
+    class="block rounded-lg overflow-hidden transform hover:scale-105 border border-gray-200 dark:border-gray-600 transition-transform cursor-pointer bg-gray-50 dark:bg-gray-900"
   >
     <div class="p-4">
       <div class="flex mb-4 space-x-2">
@@ -14,7 +14,7 @@
         </span>
       </div>
       <h3 class="text-lg font-bold text-black dark:text-white mb-2">{{ title }}</h3>
-      <p class="text-gray-800 dark:text-gray-400 mb-4 description">{{ description }}</p>
+      <p class="text-gray-800 dark:text-gray-400 mb-4 description text-sm">{{ description }}</p>
     </div>
   </div>
 </template>
@@ -53,7 +53,7 @@ export default {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   line-clamp: 3;
   max-height: 4.5em;
 }
