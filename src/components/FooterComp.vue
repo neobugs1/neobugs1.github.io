@@ -1,5 +1,5 @@
 <template>
-  <footer class="flex bg-gray-100 dark:bg-gray-900 text-white py-8 justify-center">
+  <footer class="flex bg-gray-100 dark:bg-gray-900 text-white py-8 justify-center shadow-[inset_0_11px_8px_-10px_rgba(0,0,0,0.2)]">
     <div class="flex justify-between items-center w-4/5">
       <div class="flex gap-2 w-1/3 justify-start">
         <p class="font-bold text-xl text-black dark:text-white">Никола</p>

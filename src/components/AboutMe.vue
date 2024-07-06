@@ -1,5 +1,8 @@
 <template>
-  <section id="about" class="flex flex-row gap-48 justify-center bg-gray-100 dark:bg-gray-900 dark:text-white overflow-hidden p-8">
+  <section
+    id="about"
+    class="flex flex-row gap-48 justify-center bg-gray-100 dark:bg-gray-900 dark:text-white overflow-hidden p-8 shadow-[inset_0_-11px_8px_-10px_rgba(0,0,0,0.1)]"
+  >
     <h2 class="text-4xl h-12 font-semibold mb-4 border-b-2 border-green-500 text-black dark:text-white">About Me</h2>
     <div class="relative w-full max-w-2xl">
       <div class="ml-10">

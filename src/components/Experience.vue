@@ -1,5 +1,7 @@
 <template>
-  <section class="flex flex-row gap-48 justify-center bg-gray-100 dark:bg-gray-900 dark:text-white overflow-hidden p-8 shadow-inner shadow-gray-300">
+  <section
+    class="flex flex-row gap-48 justify-center bg-gray-100 dark:bg-gray-900 dark:text-white overflow-hidden p-8 shadow-[inset_0_11px_8px_-10px_rgba(0,0,0,0.1),inset_0_-24px_24px_-10px_rgba(0,0,0,0.1)]"
+  >
     <h2 class="text-4xl h-12 font-semibold mb-4 border-b-2 border-green-500 text-black dark:text-white">Experience</h2>
     <div class="relative w-full max-w-2xl">
       <!-- Connecting line -->
