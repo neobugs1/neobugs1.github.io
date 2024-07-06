@@ -1,5 +1,5 @@
 <template>
-  <section class="flex flex-row gap-48 justify-center bg-gray-100 dark:bg-gray-900 dark:text-white overflow-hidden p-8">
+  <section class="flex flex-row gap-48 justify-center bg-gray-100 dark:bg-gray-900 dark:text-white overflow-hidden p-8 shadow-inner shadow-gray-300">
     <h2 class="text-4xl h-12 font-semibold mb-4 border-b-2 border-green-500 text-black dark:text-white">Experience</h2>
     <div class="relative w-full max-w-2xl">
       <!-- Connecting line -->
@@ -9,8 +9,8 @@
         <!-- Circle -->
         <div
           :class="[
-            'absolute top-2/4 transform -translate-x-1/2 h-6 w-6 rounded-full border-2 border-green-500',
-            job.isPresent ? 'bg-green-500' : 'bg-gray-100 dark:bg-gray-900',
+            'absolute top-2/4 transform -translate-x-1/2 h-4 w-4 rounded-full border-2 border-green-500',
+            job.isPresent ? 'bg-green-500 pulsating-circle' : 'bg-gray-100 dark:bg-gray-900',
           ]"
         ></div>
         <!-- Job details -->
@@ -68,3 +68,61 @@ export default {
   },
 };
 </script>
+
+<style>
+.pulsating-circle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+
+  &:before {
+    content: "";
+    position: relative;
+    display: block;
+    width: 300%;
+    height: 300%;
+    box-sizing: border-box;
+    margin-left: -100%;
+    margin-top: -100%;
+    border-radius: 45px;
+    background-color: rgb(0, 78, 0);
+    animation: pulse-ring 2.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 214, 0);
+    border-radius: 15px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    animation: pulse-dot 2.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite;
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.33);
+  }
+  80%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-dot {
+  0% {
+    transform: scale(0.7);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.7);
+  }
+}
+</style>
