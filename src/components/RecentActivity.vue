@@ -246,18 +246,7 @@ async function main() {
   border: none;
   outline: none;
 }
-.ghCalendarDayCell[data-level="FIRST_QUARTILE"] {
-  background-color: var(--gh-cell-level1-color);
-}
-.ghCalendarDayCell[data-level="SECOND_QUARTILE"] {
-  background-color: var(--gh-cell-level2-color);
-}
-.ghCalendarDayCell[data-level="THIRD_QUARTILE"] {
-  background-color: var(--gh-cell-level3-color);
-}
-.ghCalendarDayCell[data-level="FOURTH_QUARTILE"] {
-  background-color: var(--gh-cell-level4-color);
-}
+
 .ghCalendarDayCell span {
   visibility: hidden;
   position: absolute;
@@ -265,7 +254,6 @@ async function main() {
   word-wrap: normal;
   text-wrap: nowrap;
   pointer-events: none;
-  background-color: var(--gh-cell-info-bg-color);
   padding: 10px;
   font-size: 12px;
   border-radius: 6px;

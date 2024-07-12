@@ -29,4 +29,19 @@ section {
   .ghCalendarTable {
     @apply text-black dark:text-white;
   }
+  .ghCalendarDayCell[data-level="FIRST_QUARTILE"] {
+    @apply bg-green-400 dark:bg-green-900;
+  }
+  .ghCalendarDayCell[data-level="SECOND_QUARTILE"] {
+    @apply bg-green-500 dark:bg-green-700;
+  }
+  .ghCalendarDayCell[data-level="THIRD_QUARTILE"] {
+    @apply bg-green-600 dark:bg-green-600;
+  }
+  .ghCalendarDayCell[data-level="FOURTH_QUARTILE"] {
+    @apply bg-green-700 dark:bg-green-500;
+  }
+  .ghCalendarDayCell span {
+    @apply text-black dark:text-white bg-white dark:bg-gray-700;
+  }
 }
