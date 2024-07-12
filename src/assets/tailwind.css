@@ -4,9 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
+div,
+section {
   @apply transition-colors duration-500;
 }
+
 @layer base {
   p,
   h1 {
