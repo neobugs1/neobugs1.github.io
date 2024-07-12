@@ -1,26 +1,26 @@
 <template>
-  <div class="p-8 bg-white dark:bg-gray-800">
-    <div class="w-3/5 mx-auto">
-      <h2 class="text-2xl font-bold text-center mb-1 text-gray-900 dark:text-white">Projects</h2>
-      <div class="h-0.5 bg-green-500 w-16 mx-auto mb-6" />
+  <div class="p-4 md:p-8 bg-white dark:bg-gray-800">
+    <div class="w-full md:w-4/5 lg:w-3/5 mx-auto">
+      <h2 class="text-xl md:text-2xl font-bold text-center mb-1 text-gray-900 dark:text-white">Projects</h2>
+      <div class="h-0.5 bg-green-500 w-16 mx-auto mb-6"></div>
 
       <p class="text-center text-sm text-gray-800 dark:text-gray-400 mb-4">
         This page lists some of my personal and work projects. Every project has some story, click on the title to read.
       </p>
-      <div class="flex justify-center mb-4">
+      <div class="flex justify-center flex-wrap mb-4">
         <button
           v-for="filter in filters"
           :key="filter"
           @click="setActiveFilter(filter)"
           :class="[
-            'px-4 py-2 mr-2 rounded-full text-sm',
+            'px-3 py-1 md:px-4 md:py-2 mr-2 mb-2 rounded-full text-sm',
             activeFilter === filter ? 'bg-green-500 text-white' : 'bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300',
           ]"
         >
           {{ filter }}
         </button>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-6">
         <ProjectCard
           v-for="project in filteredProjects"
           :key="project.id"

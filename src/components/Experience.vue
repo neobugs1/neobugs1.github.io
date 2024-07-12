@@ -1,27 +1,32 @@
 <template>
   <section
-    class="flex flex-row gap-48 justify-center bg-gray-100 dark:bg-gray-900 dark:text-white overflow-hidden p-8 shadow-[inset_0_11px_8px_-10px_rgba(0,0,0,0.1),inset_0_-24px_24px_-10px_rgba(0,0,0,0.1)]"
+    class="flex flex-col md:flex-row gap-8 md:gap-16 justify-center bg-gray-100 dark:bg-gray-900 dark:text-white overflow-hidden p-8 shadow-[inset_0_11px_8px_-10px_rgba(0,0,0,0.1),inset_0_-24px_24px_-10px_rgba(0,0,0,0.1)]"
   >
-    <h2 class="text-4xl h-12 font-semibold mb-4 border-b-2 border-green-500 text-black dark:text-white">Experience</h2>
+    <div class="flex flex-col items-center md:items-start">
+      <h2 class="text-2xl md:text-4xl md:h-12 font-semibold mb-4 border-b-2 border-green-500 text-black dark:text-white">Experience</h2>
+    </div>
     <div class="relative w-full max-w-2xl">
       <!-- Connecting line -->
-      <div class="absolute top-32 transform -translate-x-1/2 h-full w-1 bg-green-500"></div>
+      <div
+        class="absolute transform -translate-x-1/2 bg-green-500"
+        :style="{ top: `calc(${firstJobHeight / 2}px)`, height: `calc(120% - ${firstJobHeight / 2}px)`, width: '3px' }"
+      ></div>
       <!-- Job entries -->
-      <div v-for="(job, index) in jobs" :key="index" class="relative mb-10">
+      <div v-for="(job, index) in jobs" :key="index" class="relative mb-10 md:mb-20">
         <!-- Circle -->
         <div
           :class="[
-            'absolute top-2/4 transform -translate-x-1/2 h-4 w-4 rounded-full border-2 border-green-500',
+            'absolute top-1/2 transform -translate-x-1/2 h-4 w-4 rounded-full border-2 border-green-500',
             job.isPresent ? 'bg-green-500 pulsating-circle' : 'bg-gray-100 dark:bg-gray-900',
           ]"
         ></div>
         <!-- Job details -->
-        <div class="ml-10 p-4 border rounded shadow-lg bg-white dark:bg-gray-900 hover:shadow-xl">
+        <div ref="jobDetails" class="ml-8 md:ml-10 p-4 border rounded shadow-lg bg-white dark:bg-gray-900 hover:shadow-xl">
           <h3 class="text-lg font-semibold text-black dark:text-white">{{ job.title }}</h3>
           <p class="text-sm text-black dark:text-white">{{ job.company }}</p>
           <p class="text-sm text-black dark:text-white">{{ job.duration }}</p>
           <p class="mt-2 text-black dark:text-white">{{ job.description }}</p>
-          <ul class="list-disc mt-2 ml-8">
+          <ul class="list-disc mt-2 ml-4 md:ml-8">
             <li v-for="point in job.points" class="text-black dark:text-white text-sm" :key="point">{{ point }}</li>
           </ul>
         </div>
@@ -66,7 +71,22 @@ export default {
           isPresent: true,
         },
       ],
+      firstJobHeight: 0,
     };
+  },
+  mounted() {
+    this.updateFirstJobHeight();
+    window.addEventListener("resize", this.updateFirstJobHeight);
+  },
+  beforeUnmount() {
+    window.removeEventListener("resize", this.updateFirstJobHeight);
+  },
+  methods: {
+    updateFirstJobHeight() {
+      this.$nextTick(() => {
+        this.firstJobHeight = this.$refs.jobDetails[0]?.offsetHeight || 0;
+      });
+    },
   },
 };
 </script>

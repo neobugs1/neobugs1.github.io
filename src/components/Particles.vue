@@ -1,38 +1,38 @@
 <template>
   <div
-    class="relative flex items-center justify-center min-h-screen bg-gradient-to-r from-green-400 to-green-600 dark:bg-gradient-to-r dark:from-gray-700 dark:to-gray-900"
+    class="relative flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-green-400 to-green-600 dark:bg-gradient-to-r dark:from-gray-700 dark:to-gray-900"
   >
-    <div id="particles-js"></div>
+    <div id="particles-js" class="absolute inset-0"></div>
     <div
       class="welcome-text text-center text-white rounded-2xl border border-green-600 dark:border-gray-500 p-8 shadow-2xl opacity-80 bg-gradient-to-r from-green-400 to-green-500 dark:bg-gradient-to-r dark:from-gray-700 dark:to-gray-900"
     >
-      <h1>{{ name }}</h1>
-      <h2>{{ title }}</h2>
-      <div class="flex justify-center mt-4 space-x-4">
+      <h1 class="text-4xl md:text-6xl p-4 mb-2">{{ name }}</h1>
+      <h2 class="text-2xl md:text-3xl mb-6">{{ title }}</h2>
+      <div class="flex flex-wrap justify-center mt-4 space-x-2 md:space-x-4">
         <a href="mailto:nikola.smileski23@gmail.com" target="_blank">
-          <div class="p-4 bg-transparent border shadow-lg rounded hover:bg-gray-800">
-            <Icon icon="mdi:email" class="text-white text-2xl" />
+          <div class="p-3 md:p-4 bg-transparent border shadow-lg rounded hover:bg-gray-800">
+            <Icon icon="mdi:email" class="text-white text-xl md:text-2xl" />
           </div>
         </a>
         <a href="https://github.com/neobugs1" target="_blank">
-          <div class="p-4 bg-transparent border shadow-lg rounded hover:bg-gray-800">
-            <Icon icon="mdi:github" class="text-white text-2xl" />
+          <div class="p-3 md:p-4 bg-transparent border shadow-lg rounded hover:bg-gray-800">
+            <Icon icon="mdi:github" class="text-white text-xl md:text-2xl" />
           </div>
         </a>
         <a href="https://www.linkedin.com/in/nikola-smileski-437b721a1/" target="_blank">
-          <div class="p-4 bg-transparent border shadow-lg rounded hover:bg-gray-800">
-            <Icon icon="mdi:linkedin" class="text-white text-2xl" />
+          <div class="p-3 md:p-4 bg-transparent border shadow-lg rounded hover:bg-gray-800">
+            <Icon icon="mdi:linkedin" class="text-white text-xl md:text-2xl" />
           </div>
         </a>
         <a href="https://i.imgur.com/1yCIRC8.jpeg" target="_blank">
-          <div class="p-4 bg-transparent border shadow-lg rounded hover:bg-gray-800">
-            <Icon icon="mdi:file-document" class="text-white text-2xl" />
+          <div class="p-3 md:p-4 bg-transparent border shadow-lg rounded hover:bg-gray-800">
+            <Icon icon="mdi:file-document" class="text-white text-xl md:text-2xl" />
           </div>
         </a>
       </div>
     </div>
-    <button @click="scrollToAbout" class="absolute bottom-5 p-4 bg-transparent border shadow-lg rounded-full hover:bg-gray-800 z-50">
-      <Icon icon="mdi:chevron-down" class="text-white text-2xl" />
+    <button @click="scrollToAbout" class="absolute bottom-5 p-3 md:p-4 bg-transparent border shadow-lg rounded-full hover:bg-gray-800 z-50">
+      <Icon icon="mdi:chevron-down" class="text-white text-xl md:text-2xl" />
     </button>
   </div>
 </template>
@@ -92,15 +92,5 @@ body {
   z-index: 2;
   text-align: center;
   color: white;
-}
-
-.welcome-text h1 {
-  font-size: 4rem;
-  margin: 0;
-}
-
-.welcome-text h2 {
-  font-size: 2rem;
-  margin: 0;
 }
 </style>
