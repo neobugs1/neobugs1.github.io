@@ -6,7 +6,7 @@
         <p class="font-bold text-xl text-green-500">Смилески</p>
       </div>
 
-      <div>
+      <div id="contrib">
         <a href="https://github.com/neobugs1/neobugs1.github.io" class="text-gray-500 hover:underline">Contribute to this project on GitHub</a>
       </div>
 
@@ -32,4 +32,10 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+@media (max-width: 1024px) {
+  #contrib {
+    display: none;
+  }
+}
+</style>

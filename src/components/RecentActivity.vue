@@ -2,11 +2,12 @@
   <section
     class="flex flex-col md:flex-row justify-center bg-gray-100 dark:bg-gray-900 overflow-hidden p-4 md:p-8 shadow-[inset_0_11px_8px_-10px_rgba(0,0,0,0.1),inset_0_-11px_8px_-10px_rgba(0,0,0,0.1)]"
   >
-    <section class="flex flex-col lg:w-3/5 justify-between lg:flex-row gap-8 dark:text-white">
-      <h2 class="text-2xl md:text-4xl h-12 font-semibold mb-4 border-b-2 border-green-500 text-black dark:text-white text-center md:text-left">
-        Recent Activity
-      </h2>
-      <div id="gh" class="w-full md:w-auto" data-login="neobugs1"></div>
+    <section class="flex flex-col xl:w-3/5 justify-between 2xl:flex-row gap-8 dark:text-white">
+      <div>
+        <h2 class="text-2xl md:text-4xl font-semibold text-black text-center dark:text-white">Recent Activity</h2>
+        <div class="h-0.5 bg-green-500 w-20 md:w-48 mx-auto" />
+      </div>
+      <div id="gh" class="w-full mx-auto md:w-auto" data-login="neobugs1"></div>
     </section>
   </section>
 </template>
@@ -345,5 +346,21 @@ async function main() {
 .ghCalendarCardFooterColors div {
   width: 10px;
   height: 10px;
+}
+@media (max-width: 1024px) {
+  .ghCalendarTable tbody:nth-child(2) tr td:nth-child(-n + 13) {
+    display: none;
+  }
+  .ghCalendarTable thead:nth-child(1) tr td:nth-child(-n + 3) {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .ghCalendarTable tbody:nth-child(2) tr td:nth-child(-n + 26) {
+    display: none;
+  }
+  .ghCalendarTable thead:nth-child(1) tr td:nth-child(-n + 6) {
+    display: none;
+  }
 }
 </style>
