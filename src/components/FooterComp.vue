@@ -14,7 +14,7 @@
         <a href="https://github.com/neobugs1" target="_blank" class="text-3xl hover:text-green-500">
           <Icon icon="mdi:github" color="#5bc733" />
         </a>
-        <a href="https://www.linkedin.com/in/nikolasmilеki/" target="_blank" class="text-3xl hover:text-green-500">
+        <a href="https://www.linkedin.com/in/nikola-smileski-437b721a1/" target="_blank" class="text-3xl hover:text-green-500">
           <Icon icon="mdi:linkedin" color="#5bc733" />
         </a>
       </div>

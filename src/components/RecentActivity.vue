@@ -356,10 +356,10 @@ async function main() {
   }
 }
 @media (max-width: 768px) {
-  .ghCalendarTable tbody:nth-child(2) tr td:nth-child(-n + 26) {
+  .ghCalendarTable tbody:nth-child(2) tr td:nth-child(-n + 30) {
     display: none;
   }
-  .ghCalendarTable thead:nth-child(1) tr td:nth-child(-n + 6) {
+  .ghCalendarTable thead:nth-child(1) tr td:nth-child(-n + 8) {
     display: none;
   }
 }
