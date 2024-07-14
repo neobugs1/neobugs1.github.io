@@ -7,8 +7,8 @@
     <div
       class="welcome-text text-center text-white rounded-2xl border border-green-600 dark:border-gray-500 p-8 shadow-2xl opacity-80 bg-gradient-to-r from-green-400 to-green-500 dark:bg-gradient-to-r dark:from-gray-700 dark:to-gray-900"
     >
-      <h1 class="text-3xl md:text-6xl md:p-4 mb-2">{{ name }}</h1>
-      <h2 class="text-lg md:text-3xl md:mb-6">{{ title }}</h2>
+      <h1 class="text-3xl md:text-6xl md:p-4 mb-2">{{ $t("welcome.name") }}</h1>
+      <h2 class="text-lg md:text-3xl md:mb-6">{{ $t("welcome.title") }}</h2>
       <div class="flex flex-wrap justify-center mt-4 space-x-2 md:space-x-4">
         <a href="mailto:nikola.smileski23@gmail.com" target="_blank">
           <div class="p-3 md:p-4 bg-transparent border shadow-lg rounded hover:bg-green-500 dark:hover:bg-gray-800">
@@ -40,21 +40,15 @@
 
 <script>
 import { Icon } from "@iconify/vue";
+import { useI18n } from "vue-i18n";
 
 export default {
-  data() {
-    return {
-      name: "Никола Смилески",
-      title: "Software Engineer",
-    };
+  setup() {
+    const { t } = useI18n();
+    return { t };
   },
   mounted() {
     particlesJS.load("particles-js", "particlesjs-config.json");
-  },
-  computed: {
-    isDarkMode() {
-      return window.themeMode === "dark";
-    },
   },
   methods: {
     scrollToAbout() {
