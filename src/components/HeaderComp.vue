@@ -1,7 +1,7 @@
 <template>
   <header class="flex justify-between items-center p-4 bg-gray-800 dark:bg-gray-950 text-white">
     <LanguagePicker />
-    <h1 class="text-xl">Никола Смилески</h1>
+    <h1 class="text-xl">{{ $t("welcome.name") }}</h1>
     <DarkModeToggle />
   </header>
 </template>

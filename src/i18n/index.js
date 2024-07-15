@@ -1,3 +1,4 @@
+import RecentActivity from "@/components/RecentActivity.vue";
 import { createI18n } from "vue-i18n";
 
 const messages = {
@@ -77,6 +78,23 @@ const messages = {
         },
       ],
     },
+    mySkills: {
+      title: "My Skills",
+      programmingLanguages: "Programming Languages",
+      backendAndDatabases: "Back-end and Databases",
+    },
+    recentActivity: "Recent Activity",
+    contactMe: {
+      title: "Contact Me",
+      name: "Name",
+      message: "Message",
+      submit: "Send",
+    },
+    footer: {
+      name: "Nikola",
+      lastName: "Smileski",
+      openSource: "This portfolio project is open source and available on GitHub.",
+    },
   },
   mk: {
     welcome: {
@@ -153,6 +171,23 @@ const messages = {
           link: "https://github.com/neobugs1/Click-To-Win",
         },
       ],
+    },
+    mySkills: {
+      title: "Мои вештини",
+      programmingLanguages: "Програмски јазици",
+      backendAndDatabases: "Back-end и Бази на податоци",
+    },
+    recentActivity: "Неодамнешна активност",
+    contactMe: {
+      title: "Контактирај ме",
+      name: "Име",
+      message: "Порака",
+      submit: "Испрати",
+    },
+    footer: {
+      name: "Никола",
+      lastName: "Смилески",
+      openSource: "Овој проект е Open Source и достапен е на GitHub.",
     },
   },
 };

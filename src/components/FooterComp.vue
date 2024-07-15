@@ -2,12 +2,12 @@
   <footer class="flex bg-gray-100 dark:bg-gray-900 text-white py-8 justify-center shadow-[inset_0_11px_8px_-10px_rgba(0,0,0,0.2)]">
     <div class="flex justify-between items-center w-4/5">
       <div class="flex gap-2 w-1/3 justify-start">
-        <p class="font-bold text-xl text-black dark:text-white">Никола</p>
-        <p class="font-bold text-xl text-green-500">Смилески</p>
+        <p class="font-bold text-xl text-black dark:text-white">{{ $t("footer.name") }}</p>
+        <p class="font-bold text-xl text-green-500">{{ $t("footer.lastName") }}</p>
       </div>
 
       <div id="contrib">
-        <a href="https://github.com/neobugs1/neobugs1.github.io" class="text-gray-500 hover:underline">Contribute to this project on GitHub</a>
+        <a href="https://github.com/neobugs1/neobugs1.github.io" class="text-gray-500 hover:underline">{{ $t("footer.openSource") }}</a>
       </div>
 
       <div class="flex gap-2 w-1/3 justify-end">

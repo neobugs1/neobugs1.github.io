@@ -2,9 +2,9 @@
   <section
     class="flex flex-col md:flex-row justify-center bg-gray-100 dark:bg-gray-900 overflow-hidden p-4 md:p-8 shadow-[inset_0_11px_8px_-10px_rgba(0,0,0,0.1),inset_0_-11px_8px_-10px_rgba(0,0,0,0.1)]"
   >
-    <section class="flex flex-col xl:w-3/5 justify-between 2xl:flex-row gap-8 dark:text-white">
+    <section class="flex flex-col xl:w-3/5 justify-between 2xl:flex-row gap-4 md:gap-2 dark:text-white">
       <div>
-        <h2 class="text-2xl md:text-4xl font-semibold text-black text-center dark:text-white">Recent Activity</h2>
+        <h2 class="text-2xl md:text-3xl font-semibold text-black text-center dark:text-white">{{ $t("recentActivity") }}</h2>
         <div class="h-0.5 bg-green-500 w-20 md:w-48 mx-auto" />
       </div>
       <div id="gh" class="w-full mx-auto md:w-auto" data-login="neobugs1"></div>

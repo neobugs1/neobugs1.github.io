@@ -1,11 +1,11 @@
 <template>
   <div id="contact" class="bg-white dark:bg-gray-800 dark:text-white py-8">
     <div class="max-w-2xl mx-auto p-6 bg-white dark:bg-gray-900 border dark:border-gray-600 shadow-md rounded-lg">
-      <h2 class="text-3xl font-bold text-center mb-6 text-black dark:text-white">Contact Me</h2>
+      <h2 class="text-3xl font-bold text-center mb-6 text-black dark:text-white">{{ $t("contactMe.title") }}</h2>
 
       <form @submit.prevent="sendEmail">
         <div class="mb-4">
-          <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Name</label>
+          <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">{{ $t("contactMe.name") }}</label>
           <input
             type="text"
             id="name"
@@ -16,7 +16,7 @@
         </div>
 
         <div class="mb-4">
-          <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Message</label>
+          <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300">{{ $t("contactMe.message") }}</label>
           <textarea
             id="message"
             v-model="form.message"
@@ -30,7 +30,7 @@
           type="submit"
           class="w-full inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-500 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
         >
-          Send
+          {{ $t("contactMe.submit") }}
         </button>
       </form>
     </div>
