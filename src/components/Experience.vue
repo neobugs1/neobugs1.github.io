@@ -18,8 +18,8 @@
         <!-- Circle -->
         <div
           :class="[
-            'absolute top-1/2 transform -translate-x-1/2 h-4 w-4 rounded-full border-2 border-green-500',
-            job.isPresent ? 'bg-green-500 pulsating-circle' : 'bg-gray-100 dark:bg-gray-900',
+            'absolute top-1/2 transform -translate-x-1/2 h-4 w-4 rounded-full',
+            job.isPresent ? 'pulsating-circle' : ' border-2 border-green-500 bg-gray-100 dark:bg-gray-900',
           ]"
         ></div>
         <!-- Job details -->
@@ -166,13 +166,13 @@ export default {
 
 @keyframes pulse-dot {
   0% {
-    transform: scale(0.7);
+    transform: scale(0.8);
   }
   50% {
     transform: scale(1);
   }
   100% {
-    transform: scale(0.7);
+    transform: scale(0.8);
   }
 }
 </style>
@@ -194,7 +194,7 @@ export default {
   margin-left: -100%;
   margin-top: -100%;
   border-radius: 45px;
-  background-color: rgb(0, 78, 0);
+  background-color: #00ff4b;
   animation: pulse-ring 2.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
 }
 
@@ -206,7 +206,7 @@ export default {
   display: block;
   width: 100%;
   height: 100%;
-  background-color: rgb(0, 214, 0);
+  background-color: rgb(3, 211, 3);
   border-radius: 15px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
   animation: pulse-dot 2.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite;
@@ -214,7 +214,7 @@ export default {
 
 @keyframes pulse-ring {
   0% {
-    transform: scale(0.33);
+    transform: scale(0.13);
   }
   80%,
   100% {
@@ -224,13 +224,13 @@ export default {
 
 @keyframes pulse-dot {
   0% {
-    transform: scale(0.7);
+    transform: scale(0.8);
   }
   50% {
     transform: scale(1);
   }
   100% {
-    transform: scale(0.7);
+    transform: scale(0.8);
   }
 }
 </style>
