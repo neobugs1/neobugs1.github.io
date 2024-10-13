@@ -8,32 +8,36 @@
         <div>
           <h3 class="text-lg md:text-xl font-semibold mb-2 text-black dark:text-white">{{ $t("mySkills.programmingLanguages") }}</h3>
           <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-4">
-            <SkillCard name="C#" icon="simple-icons:csharp" />
             <SkillCard name="Java" icon="ri:java-fill" />
             <SkillCard name="JavaScript" icon="ri:javascript-fill" />
+            <SkillCard name="C#" icon="simple-icons:csharp" />
             <SkillCard name="Python" icon="simple-icons:python" />
+            <SkillCard name="C" icon="tabler:hexagon-letter-c-filled" />
+            <SkillCard name="PHP" icon="akar-icons:php-fill" />
           </div>
         </div>
 
         <div>
           <h3 class="text-lg md:text-xl font-semibold mb-2 text-black dark:text-white">Front-End</h3>
           <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-4">
-            <SkillCard name="Bootstrap" icon="ri:bootstrap-fill" />
-            <SkillCard name="CSS" icon="akar-icons:css-fill" />
             <SkillCard name="HTML" icon="akar-icons:html-fill" />
+            <SkillCard name="CSS" icon="akar-icons:css-fill" />
             <SkillCard name="React" icon="akar-icons:react-fill" />
+            <SkillCard name="Bootstrap" icon="ri:bootstrap-fill" />
             <SkillCard name="Tailwind CSS" icon="ri:tailwind-css-fill" />
+            <SkillCard name="Chakra UI" icon="simple-icons:chakraui" />
           </div>
         </div>
 
         <div>
           <h3 class="text-lg md:text-xl font-semibold mb-2 text-black dark:text-white">{{ $t("mySkills.backendAndDatabases") }}</h3>
           <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-4">
+            <SkillCard name="Spring" icon="simple-icons:spring" />
+            <SkillCard name="PostgreSQL" icon="akar-icons:postgresql-fill" />
+            <SkillCard name="Laravel" icon="lineicons:laravel" />
             <SkillCard name="Django" icon="simple-icons:django" />
             <SkillCard name="MongoDB" icon="simple-icons:mongodb" />
             <SkillCard name="MySQL" icon="simple-icons:mysql" />
-            <SkillCard name="PostgreSQL" icon="akar-icons:postgresql-fill" />
-            <SkillCard name="Spring" icon="simple-icons:spring" />
             <SkillCard name="SQLite" icon="simple-icons:sqlite" />
           </div>
         </div>

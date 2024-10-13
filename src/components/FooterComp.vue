@@ -7,7 +7,7 @@
       </div>
 
       <div id="contrib">
-        <a href="https://github.com/neobugs1/neobugs1.github.io" class="text-gray-500 hover:underline">{{ $t("footer.openSource") }}</a>
+        <a href="https://github.com/neobugs1" class="text-gray-500 hover:underline">{{ $t("footer.openSource") }}</a>
       </div>
 
       <div class="flex gap-2 w-1/3 justify-end">

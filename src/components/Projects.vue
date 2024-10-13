@@ -9,6 +9,8 @@
       <p class="text-center text-sm text-gray-800 dark:text-gray-400 mb-4">
         {{ t("projects.description") }}
       </p>
+
+      <!-- Filters for projects -->
       <div class="flex justify-center flex-wrap mb-4">
         <button
           v-for="filter in filters"
@@ -22,6 +24,26 @@
           {{ filter }}
         </button>
       </div>
+
+      <!-- Main Project Highlight -->
+      <div class="mb-8">
+        <div
+          class="bg-green-500 text-white p-6 rounded-lg shadow-lg text-center justify-center transition duration-300 transform hover:scale-105 cursor-pointer"
+          @click="openMainProject"
+        >
+          <div class="flex justify-center mb-4 space-x-2">
+            <span class="inline-block px-2 py-1 text-xs font-semibold bg-gray-100 text-gray-800 rounded-full"> spring </span>
+            <span class="inline-block px-2 py-1 text-xs font-semibold bg-gray-100 text-gray-800 rounded-full"> react </span>
+            <span class="inline-block px-2 py-1 text-xs font-semibold bg-gray-100 text-gray-800 rounded-full"> postgres </span>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">sklopi.mk</h3>
+          <p class="text-white dark:text-gray-100 description text-sm">
+            {{ t("projects.highlightProject") }}
+          </p>
+        </div>
+      </div>
+
+      <!-- Other Projects -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-6">
         <ProjectCard
           v-for="project in filteredProjects"
@@ -48,6 +70,11 @@ export default {
   components: {
     ProjectCard,
     ProjectModal,
+  },
+  methods: {
+    openMainProject() {
+      window.open("https://sklopi.mk", "_blank");
+    },
   },
   setup() {
     const { t } = useI18n();

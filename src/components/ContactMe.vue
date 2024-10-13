@@ -11,7 +11,7 @@
             id="name"
             v-model="form.name"
             required
-            class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm"
+            class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm dark:text-black"
           />
         </div>
 
@@ -22,7 +22,7 @@
             v-model="form.message"
             required
             rows="4"
-            class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm"
+            class="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm dark:text-black"
           ></textarea>
         </div>
 
@@ -77,6 +77,6 @@ export default {
 
 input[type="text"],
 textarea {
-  background-color: #fff;
+  background-color: #ffffff;
 }
 </style>

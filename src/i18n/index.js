@@ -38,6 +38,13 @@ const messages = {
             "Database Management Systems",
           ],
         },
+        {
+          title: "Open to Work",
+          company: "",
+          duration: "Present",
+          description: "",
+          points: ["Looking for exciting opportunities!"],
+        },
       ],
     },
     aboutMe: {
@@ -50,6 +57,7 @@ const messages = {
       filters: {
         all: "all",
       },
+      highlightProject: "Aggregator for computer components in Macedonia. Selection of parts, prices and checking for compatibility when assembling computers.",
       projectList: [
         {
           title: "Offer Oasis",
@@ -132,6 +140,13 @@ const messages = {
             "Бази на податоци",
           ],
         },
+        {
+          title: "Достапен за работа",
+          company: "",
+          duration: "Сега",
+          description: "",
+          points: ["Во потрага по нови возбудливи можности!"],
+        },
       ],
     },
     aboutMe: {
@@ -144,6 +159,8 @@ const messages = {
       filters: {
         all: "сите",
       },
+      highlightProject:
+        "Агрегатор за компјутерски компоненти во Македонија. Селекција на делови, цени и проверка за компатибилност при склопување на компјутери.",
       projectList: [
         {
           title: "Offer Oasis",

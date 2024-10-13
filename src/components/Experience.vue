@@ -11,7 +11,7 @@
       <!-- Connecting line -->
       <div
         class="absolute transform -translate-x-1/2 bg-green-500"
-        :style="{ top: `calc(${firstJobHeight / 2}px)`, height: `calc(120% - ${firstJobHeight / 2}px)`, width: '3px' }"
+        :style="{ top: `calc(${firstJobHeight / 1.7}px)`, height: `calc(120% - ${firstJobHeight / 2}px)`, width: '3px' }"
       ></div>
       <!-- Job entries -->
       <div v-for="(job, index) in translatedJobs" :key="index" class="relative mb-10 md:mb-20">
@@ -49,6 +49,14 @@ export default {
 
     const jobs = [
       {
+        title: "experience.jobs.2.title", // Title in English
+        company: "", // Leave empty since there's no company
+        duration: "experience.jobs.2.duration", // Indicate that it's currently valid
+        description: "", // Optional description if you want to add more context
+        points: ["experience.jobs.2.points.0"],
+        isPresent: true, // Indicate this is a present status
+      },
+      {
         title: "experience.jobs.0.title",
         company: "experience.jobs.0.company",
         duration: "experience.jobs.0.duration",
@@ -71,7 +79,7 @@ export default {
           "experience.jobs.1.points.6",
           "experience.jobs.1.points.7",
         ],
-        isPresent: true,
+        isPresent: false,
       },
     ];
 
