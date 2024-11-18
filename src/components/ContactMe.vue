@@ -33,13 +33,23 @@
           {{ $t("contactMe.submit") }}
         </button>
       </form>
+      <!-- Divider -->
+      <hr class="border-t border-gray-300 dark:border-gray-600 my-4" />
+
+      <!-- Copy Email Section -->
+      <div class="text-center flex justify-center items-center align-middle gap-2">
+        <button @click="copyEmail">
+          <Icon icon="mdi:content-copy" style="height: 24px; width: 24px" />
+        </button>
+        <p class="font-semibold text-green-600">nikola.smileski23@gmail.com</p>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import emailjs from "emailjs-com";
-
+import { Icon } from "@iconify/vue";
 export default {
   data() {
     return {
@@ -66,6 +76,19 @@ export default {
           alert("Failed to send email. Please try again later.");
         });
     },
+    copyEmail() {
+      navigator.clipboard.writeText("nikola.smileski23@gmail.com").then(
+        () => {
+          alert("Email copied to clipboard!");
+        },
+        (err) => {
+          console.error("Could not copy text: ", err);
+        }
+      );
+    },
+  },
+  components: {
+    Icon,
   },
 };
 </script>
