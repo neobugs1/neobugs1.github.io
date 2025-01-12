@@ -49,12 +49,12 @@ export default {
 
     const jobs = [
       {
-        title: "experience.jobs.2.title", // Title in English
-        company: "", // Leave empty since there's no company
-        duration: "experience.jobs.2.duration", // Indicate that it's currently valid
-        description: "", // Optional description if you want to add more context
-        points: ["experience.jobs.2.points.0"],
-        isPresent: true, // Indicate this is a present status
+        title: "experience.jobs.2.title",
+        company: "experience.jobs.2.company",
+        duration: "experience.jobs.2.duration",
+        description: "experience.jobs.2.description",
+        points: ["experience.jobs.2.points.0", "experience.jobs.2.points.1", "experience.jobs.2.points.2", "experience.jobs.2.points.3"],
+        isPresent: true,
       },
       {
         title: "experience.jobs.0.title",
