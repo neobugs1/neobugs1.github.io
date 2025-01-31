@@ -7,192 +7,150 @@
         <h2 class="text-2xl md:text-3xl font-semibold text-black text-center dark:text-white">{{ $t("recentActivity") }}</h2>
         <div class="h-0.5 bg-green-500 w-20 md:w-48 mx-auto" />
       </div>
-      <div id="gh" class="w-full mx-auto md:w-auto" data-login="neobugs1"></div>
+      <div id="gh" class="w-full mx-auto md:w-auto"></div>
     </section>
   </section>
 </template>
 
 <script>
-async function fetchData(ghLogin) {
-  try {
-    let response = await fetch(`https://lengthylyova.pythonanywhere.com/api/gh-contrib-graph/fetch-data/?githubLogin=${ghLogin}`, { method: "GET" });
-    let data = await response.json();
-    console.log("Fetched data:", data);
-    return data["data"]["user"];
-  } catch (error) {
-    console.error("Error fetching data:", error);
-    return null;
-  }
-}
-
-function init_table() {
-  let table = document.createElement("table");
-  table.className = "ghCalendarTable";
-  let thead = table.createTHead();
-  let tbody = table.createTBody();
-  let row = thead.insertRow();
-  let cell = row.insertCell();
-  cell.style.width = "28px";
-  for (let i = 0; i < 7; i++) {
-    row = tbody.insertRow();
-    cell = row.insertCell();
-    switch (i) {
-      case 1:
-        cell.innerHTML = '<span class="ghCalendarLabel">Mon</span>';
-        break;
-      case 3:
-        cell.innerHTML = '<span class="ghCalendarLabel">Wed</span>';
-        break;
-      case 5:
-        cell.innerHTML = '<span class="ghCalendarLabel">Fri</span>';
-        break;
-    }
-  }
-  return [table, thead, tbody];
-}
-
-function addMonths(thead, months) {
-  for (let i = 0; i < months.length - 1; i++) {
-    const total_weeks = months[i]["totalWeeks"];
-    if (total_weeks >= 2) {
-      let cell = thead.rows[0].insertCell();
-      let label = document.createElement("span");
-      label.textContent = months[i]["name"];
-      label.className = "ghCalendarLabel";
-      cell.appendChild(label);
-      cell.colSpan = months[i]["totalWeeks"];
-    }
-  }
-}
-
-function addWeeks(tbody, weeks, colors) {
-  for (let i = 0; i < weeks.length; i++) {
-    const days = weeks[i]["contributionDays"];
-    for (let j = 0; j < days.length; j++) {
-      const day = days[j];
-      const data = document.createElement("span");
-      let date = new Date(day["date"]);
-      data.textContent = `${day["contributionCount"]} contributions on ${date.toDateString()}`;
-      const cell = tbody.rows[day["weekday"]].insertCell();
-      cell.appendChild(data);
-      cell.className = "ghCalendarDayCell";
-      cell.dataset.date = day["date"];
-      cell.dataset.count = day["contributionCount"];
-      cell.dataset.level = day["contributionLevel"];
-    }
-  }
-}
-
-function init_card() {
-  const card = document.createElement("div");
-  card.className = "ghCalendarCard";
-  return card;
-}
-
-function init_card_footer() {
-  const footer = document.createElement("div");
-  const colors = document.createElement("div");
-  footer.className = "ghCalendarCardFooter";
-  colors.className = "ghCalendarCardFooterColors";
-  let less = document.createElement("span");
-  less.textContent = "Less";
-  let more = document.createElement("span");
-  more.textContent = "More";
-  colors.appendChild(less);
-  let levels = ["NONE", "FIRST_QUARTILE", "SECOND_QUARTILE", "THIRD_QUARTILE", "FOURTH_QUARTILE"];
-  for (let i = 0; i < 5; i++) {
-    let cell = document.createElement("div");
-    cell.className = "ghCalendarDayCell";
-    cell.dataset.level = levels[i];
-    colors.appendChild(cell);
-  }
-  colors.appendChild(more);
-  footer.appendChild(colors);
-  return footer;
-}
-
-function init_canvas() {
-  const canvas = document.createElement("div");
-  canvas.className = "ghCalendarCanvas";
-  return canvas;
-}
-
-function init_header(total_contribs, ghLogin, avatarUrl) {
-  const header = document.createElement("div");
-  const total = document.createElement("span");
-  const profile = document.createElement("div");
-  profile.innerHTML = `<a href="https://github.com/${ghLogin}">${ghLogin}</a><img src="${avatarUrl}">`;
-  header.className = "ghCalendarHeader";
-  total.textContent = `${total_contribs} contributions in the last year`;
-  header.appendChild(total);
-  header.appendChild(profile);
-  return header;
-}
-
-function init_thumbnail() {
-  const thumbnail = document.createElement("div");
-  const thumbNailLink = document.createElement("a");
-  const thumbnailImage = document.createElement("img");
-
-  thumbnail.className = "ghThumbNail";
-  thumbNailLink.href = "https://github.com/lengthylyova/gh-contrib-graph";
-  thumbnailImage.src = "http://lengthylyova.pythonanywhere.com/static/gh-contrib-graph/thumbnail.png";
-  thumbnailImage.style.width = "150px";
-  thumbnailImage.style.marginTop = "10px";
-  thumbnailImage.alt = "GitHub Contribution Graph";
-  thumbNailLink.appendChild(thumbnailImage);
-  thumbnail.appendChild(thumbNailLink);
-  return thumbnail;
-}
+import contributions from "@/assets/contributions.json"; // Import the contributions.json file
 
 export default {
   mounted() {
-    main();
+    this.renderGraph();
+  },
+  methods: {
+    renderGraph() {
+      const data = contributions.data.user.contributionsCollection.contributionCalendar;
+      const container = document.getElementById("gh");
+
+      if (!container) {
+        console.error("Container element #gh not found.");
+        return;
+      }
+
+      // Clear the container
+      container.innerHTML = "";
+
+      // Create the table and other elements
+      const [table, thead, tbody] = this.initTable();
+      const card = this.initCard();
+      const canvas = this.initCanvas();
+      const header = this.initHeader(data.totalContributions, "neobugs1", contributions.data.user.avatarUrl);
+      const footer = this.initCardFooter();
+
+      this.addWeeks(tbody, data.weeks, data.colors);
+      this.addMonths(thead, data.months);
+
+      canvas.appendChild(table);
+      canvas.appendChild(footer);
+      card.appendChild(canvas);
+      container.appendChild(header);
+      container.appendChild(card);
+    },
+    initTable() {
+      let table = document.createElement("table");
+      table.className = "ghCalendarTable";
+      let thead = table.createTHead();
+      let tbody = table.createTBody();
+      let row = thead.insertRow();
+      let cell = row.insertCell();
+      cell.style.width = "28px";
+      for (let i = 0; i < 7; i++) {
+        row = tbody.insertRow();
+        cell = row.insertCell();
+        switch (i) {
+          case 1:
+            cell.innerHTML = '<span class="ghCalendarLabel">Mon</span>';
+            break;
+          case 3:
+            cell.innerHTML = '<span class="ghCalendarLabel">Wed</span>';
+            break;
+          case 5:
+            cell.innerHTML = '<span class="ghCalendarLabel">Fri</span>';
+            break;
+        }
+      }
+      return [table, thead, tbody];
+    },
+    addMonths(thead, months) {
+      for (let i = 0; i < months.length - 1; i++) {
+        const total_weeks = months[i]["totalWeeks"];
+        if (total_weeks >= 2) {
+          let cell = thead.rows[0].insertCell();
+          let label = document.createElement("span");
+          label.textContent = months[i]["name"];
+          label.className = "ghCalendarLabel";
+          cell.appendChild(label);
+          cell.colSpan = months[i]["totalWeeks"];
+        }
+      }
+    },
+    addWeeks(tbody, weeks, colors) {
+      for (let i = 0; i < weeks.length; i++) {
+        const days = weeks[i]["contributionDays"];
+        for (let j = 0; j < days.length; j++) {
+          const day = days[j];
+          const data = document.createElement("span");
+          let date = new Date(day["date"]);
+          data.textContent = `${day["contributionCount"]} contributions on ${date.toDateString()}`;
+          const cell = tbody.rows[day["weekday"]].insertCell();
+          cell.appendChild(data);
+          cell.className = "ghCalendarDayCell";
+          cell.dataset.date = day["date"];
+          cell.dataset.count = day["contributionCount"];
+          cell.dataset.level = day["contributionLevel"];
+        }
+      }
+    },
+    initCard() {
+      const card = document.createElement("div");
+      card.className = "ghCalendarCard";
+      return card;
+    },
+    initCardFooter() {
+      const footer = document.createElement("div");
+      const colors = document.createElement("div");
+      footer.className = "ghCalendarCardFooter";
+      colors.className = "ghCalendarCardFooterColors";
+      let less = document.createElement("span");
+      less.textContent = "Less";
+      let more = document.createElement("span");
+      more.textContent = "More";
+      colors.appendChild(less);
+      let levels = ["NONE", "FIRST_QUARTILE", "SECOND_QUARTILE", "THIRD_QUARTILE", "FOURTH_QUARTILE"];
+      for (let i = 0; i < 5; i++) {
+        let cell = document.createElement("div");
+        cell.className = "ghCalendarDayCell";
+        cell.dataset.level = levels[i];
+        colors.appendChild(cell);
+      }
+      colors.appendChild(more);
+      footer.appendChild(colors);
+      return footer;
+    },
+    initCanvas() {
+      const canvas = document.createElement("div");
+      canvas.className = "ghCalendarCanvas";
+      return canvas;
+    },
+    initHeader(totalContribs, ghLogin, avatarUrl) {
+      const header = document.createElement("div");
+      const total = document.createElement("span");
+      const profile = document.createElement("div");
+      profile.innerHTML = `<a href="https://github.com/${ghLogin}">${ghLogin}</a><img src="${avatarUrl}">`;
+      header.className = "ghCalendarHeader";
+      total.textContent = `${totalContribs} contributions in the last year`;
+      header.appendChild(total);
+      header.appendChild(profile);
+      return header;
+    },
   },
 };
-
-async function main() {
-  try {
-    const container = document.getElementById("gh");
-    if (!container) {
-      console.error("Container element #gh not found.");
-      return;
-    }
-
-    const ghLogin = container.dataset.login;
-    if (!ghLogin) {
-      console.error("GitHub login data attribute not found on #gh element.");
-      return;
-    }
-
-    const data = await fetchData(ghLogin);
-    if (!data) {
-      console.error("Failed to fetch GitHub data.");
-      return;
-    }
-
-    const calendar = data["contributionsCollection"]["contributionCalendar"];
-    const [table, thead, tbody] = init_table();
-    const card = init_card();
-    const canvas = init_canvas();
-    const header = init_header(calendar["totalContributions"], ghLogin, data["avatarUrl"]);
-    const footer = init_card_footer();
-
-    addWeeks(tbody, calendar["weeks"], calendar["colors"]);
-    addMonths(thead, calendar["months"]);
-
-    canvas.appendChild(table);
-    canvas.appendChild(footer);
-    card.appendChild(canvas);
-    container.appendChild(header);
-    container.appendChild(card);
-  } catch (error) {
-    console.error("Error in main function:", error);
-  }
-}
 </script>
 
 <style>
+/* Add your existing styles here */
 :root {
   --gh-base-size-4: 0.25rem;
   --gh-base-size-8: 0.5rem;

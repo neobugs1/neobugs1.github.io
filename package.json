@@ -13,6 +13,7 @@
   "dependencies": {
     "axios": "^1.7.2",
     "emailjs-com": "^3.2.0",
+    "github-calendar": "^2.3.4",
     "github-markdown-css": "^5.6.1",
     "marked": "^13.0.1",
     "oh-vue-icons": "^1.0.0-rc3",
