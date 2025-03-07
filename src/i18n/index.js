@@ -25,7 +25,7 @@ const messages = {
         {
           title: "Student",
           company: "Faculty of Computer Science and Engineering",
-          duration: "September 2019 - Present • Skopje, Macedonia",
+          duration: "September 2019 - November 2024 • Skopje, Macedonia",
           description: "As a student I learned many things, including:",
           points: [
             "Algorithms and Data Structures",
@@ -41,22 +41,29 @@ const messages = {
         {
           title: "Product Engineer",
           company: "MVP Master",
-          duration: "December 2024 - Present • Hybrid",
+          duration: "December 2024 - March 2025 • Hybrid",
           description: "Working as a Product Engineer at MVP Master, focusing on full-stack development.",
           points: [
             "Building scalable web applications using Next.js and NestJS.",
             "Developing and maintaining APIs with NestJS, integrating with PostgreSQL and Firebase.",
-            "Implementing best practices for frontend performance and SEO optimization in Next.js.",
+            "Implementing database solutions using Firestore and Elasticsearch for efficient data storage and retrieval.",
             "Collaborating with cross-functional teams to design, develop, and deploy new features.",
             "Ensuring robust authentication and authorization using Firebase and Prisma ORM.",
             "Writing clean, maintainable, and testable code following industry standards.",
           ],
         },
+        {
+          title: "Open to Work",
+          company: "Open to Opportunities",
+          duration: "Present",
+          description: "Currently seeking new opportunities in software engineering.",
+          points: ["Excited for new opportunities to apply my skills and grow professionally."],
+        },
       ],
     },
     aboutMe: {
       title: "About Me",
-      desc: "Software engineer with a passion for web development, algorithms, and user-friendly interfaces. Currently studying at the Faculty of Computer Science and Engineering. Enthusiastic about creating efficient solutions and exploring new technologies.",
+      desc: "Software engineer with a passion for web development, algorithms, and user-friendly interfaces. Graduate of the Faculty of Computer Science and Engineering. Enthusiastic about creating efficient solutions and exploring new technologies.",
     },
     projects: {
       sectionTitle: "Projects",
@@ -134,7 +141,7 @@ const messages = {
         {
           title: "Студент",
           company: "Факултет за компјутерски науки и инженерство",
-          duration: "Септември 2019 - Сега • Скопје, Македонија",
+          duration: "Септември 2019 - Ноември 2024 • Скопје, Македонија",
           description: "Како студент научив многу работи, вклучувајќи:",
           points: [
             "Алгоритми и податочни структури",
@@ -150,22 +157,29 @@ const messages = {
         {
           title: "Продукт Инженер",
           company: "MVP Masters",
-          duration: "Декември 2024 - Сега • Хибридно",
+          duration: "Декември 2024 - Март 2025 • Хибридно",
           description: "Работам како продукт инженер во MVP Master, со фокус на full-stack развој.",
           points: [
             "Изработка на скалабилни веб апликации користејќи Next.js и NestJS.",
             "Развој и одржување на API со NestJS, интегрирање со PostgreSQL и Firebase.",
-            "Имплементација на најдобри практики за frontend перформанси и SEO оптимизација во Next.js.",
+            "Имплементација на решенија за бази на податоци со Firestore и Elasticsearch за ефикасно складирање и пребарување на податоци.",
             "Соработка со различни тимови за дизајн, развој и имплементација на нови функционалности.",
             "Осигурување на сигурна автентикација и авторизација користејќи Firebase и Prisma ORM.",
             "Пишување чист, одржлив и тестиран код според индустриските стандарди.",
           ],
         },
+        {
+          title: "Достапен за работа",
+          company: "Отворен за можности",
+          duration: "Моментално",
+          description: "Во потрага по нови можности во софтверското инженерство.",
+          points: ["Возбуден за нови можности да ги применам моите вештини и да растам професионално."],
+        },
       ],
     },
     aboutMe: {
       title: "За менe",
-      desc: "Софтверски инженер со пасија за развој на веб апликации и кориснички интерфејси. Моментално студира на Факултетот за компјутерски науки и инженерство. Ентузијазен за создавање ефикасни решенија и истражување на нови технологии.",
+      desc: "Софтверски инженер со пасија за развој на веб апликации и кориснички интерфејси. Дипломиран на Факултетот за компјутерски науки и инженерство. Ентузијазен за создавање ефикасни решенија и истражување на нови технологии.",
     },
     projects: {
       sectionTitle: "Проекти",

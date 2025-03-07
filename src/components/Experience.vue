@@ -49,12 +49,20 @@ export default {
 
     const jobs = [
       {
+        title: "experience.jobs.3.title",
+        company: "experience.jobs.3.company",
+        duration: "experience.jobs.3.duration",
+        description: "experience.jobs.3.description",
+        points: ["experience.jobs.3.points.0"],
+        isPresent: true,
+      },
+      {
         title: "experience.jobs.2.title",
         company: "experience.jobs.2.company",
         duration: "experience.jobs.2.duration",
         description: "experience.jobs.2.description",
         points: ["experience.jobs.2.points.0", "experience.jobs.2.points.1", "experience.jobs.2.points.2", "experience.jobs.2.points.3"],
-        isPresent: true,
+        isPresent: false,
       },
       {
         title: "experience.jobs.0.title",

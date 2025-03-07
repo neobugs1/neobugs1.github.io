@@ -26,6 +26,7 @@
             <SkillCard name="Bootstrap" icon="ri:bootstrap-fill" />
             <SkillCard name="Tailwind CSS" icon="ri:tailwind-css-fill" />
             <SkillCard name="Chakra UI" icon="simple-icons:chakraui" />
+            <SkillCard name="Next.js" icon="simple-icons:nextdotjs" />
           </div>
         </div>
 
@@ -39,6 +40,9 @@
             <SkillCard name="MongoDB" icon="simple-icons:mongodb" />
             <SkillCard name="MySQL" icon="simple-icons:mysql" />
             <SkillCard name="SQLite" icon="simple-icons:sqlite" />
+            <SkillCard name="NestJS" icon="simple-icons:nestjs" />
+            <SkillCard name="Firestore" icon="simple-icons:firebase" />
+            <SkillCard name="Elasticsearch" icon="simple-icons:elasticsearch" />
           </div>
         </div>
       </div>
