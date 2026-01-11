@@ -25,7 +25,7 @@
             <Icon icon="mdi:linkedin" class="text-white text-xl md:text-2xl" />
           </div>
         </a>
-        <a href="/cv.pdf" target="_blank">
+        <a :href="`${baseUrl}cv.pdf`" target="_blank">
           <div class="p-3 md:p-4 bg-transparent border shadow-lg rounded hover:bg-green-500 dark:hover:bg-gray-800">
             <Icon icon="mdi:file-document" class="text-white text-xl md:text-2xl" />
           </div>
@@ -45,7 +45,8 @@ import { useI18n } from "vue-i18n";
 export default {
   setup() {
     const { t } = useI18n();
-    return { t };
+    const baseUrl = import.meta.env.BASE_URL;
+    return { t, baseUrl };
   },
   mounted() {
     particlesJS.load("particles-js", "particlesjs-config.json");

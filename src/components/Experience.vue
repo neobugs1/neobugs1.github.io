@@ -53,7 +53,12 @@ export default {
         company: "experience.jobs.3.company",
         duration: "experience.jobs.3.duration",
         description: "experience.jobs.3.description",
-        points: ["experience.jobs.3.points.0"],
+        points: [
+          "experience.jobs.3.points.0",
+          "experience.jobs.3.points.1",
+          "experience.jobs.3.points.2",
+          "experience.jobs.3.points.3",
+        ],
         isPresent: true,
       },
       {
